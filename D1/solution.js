@@ -13,13 +13,16 @@ function findMaxes(input, num = 1) {
       maxes.shift();
       maxes.push(e);
     }
-  })
+  });
   return addCalc(maxes);
 }
 
 function findWeight(elves) {
-  // return findMax(elves.map(addCalc));
+  return findMax(elves.map(addCalc));
+}
+
+function findMultiWeights(elves) {
   return findMaxes(elves.map(addCalc), 3);
 }
 
-module.exports = findWeight;
+module.exports = { findWeight, findMultiWeights };
